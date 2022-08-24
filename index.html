@@ -70,11 +70,11 @@
         }
         else {
           if (document.getElementById(t1).innerHTML == '[X]') {
-            document.getElementById('player').innerHTML = '<h2 style="font-family: sans-serif;">Player X Won!</h2><button onclick="location.reload()">Play Again</button>'
+            document.getElementById('player').innerHTML = '<h2 style="font-family: sans-serif;">Player X Won!</h2><button style="background-color:lightblue; border-radius: 10px;" onclick="location.reload()">Play Again</button>'
             won1 = true
           }
           else {
-            document.getElementById('player').innerHTML = '<h2 style="font-family: sans-serif;">Player O Won!</h2><button onclick="location.reload()">Play Again</button>'
+            document.getElementById('player').innerHTML = '<h2 style="font-family: sans-serif;">Player O Won!</h2><button style="background-color:lightblue; border-radius: 10px;" onclick="location.reload()">Play Again</button>'
             won1 = true
           }
         }
@@ -90,7 +90,7 @@
       if (document.getElementById('button_7').innerHTML == '[X]' || document.getElementById('button_7').innerHTML == '[O]') {
       if (document.getElementById('button_8').innerHTML == '[X]' || document.getElementById('button_8').innerHTML == '[O]') {
       if (document.getElementById('button_9').innerHTML == '[X]' || document.getElementById('button_9').innerHTML == '[O]') {
-        document.getElementById('player').innerHTML = '<h2 style="font-family: sans-serif;">Its A Draw!</h2><button onclick="location.reload()">Play Again</button>'
+        document.getElementById('player').innerHTML = '<h2 style="font-family: sans-serif;">Its A Draw!</h2><button style="background-color:lightblue; border-radius: 10px;" onclick="location.reload()">Play Again</button>'
         won1 = true
       }
       }
