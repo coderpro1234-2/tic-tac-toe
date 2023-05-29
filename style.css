@@ -1,0 +1,43 @@
+button {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 4px;
+  font-family: sans-serif;
+  font-size: 25px;
+  text-align: center;
+  background-color:burlywood;
+  border-radius: 10px;
+}
+.game {
+  width: 216px;
+  margin-top: 4px;
+  margin-left: 4px;
+}
+.player_O {
+  background-color:skyblue;
+}
+.player_X {
+  background-color:lightcoral;
+}
+.retrybutton {
+  width: 100px;
+  height: 32px;
+  font-family: sans-serif;
+  text-align: center;
+  font-size: 15px;
+  background-color:burlywood;
+  border-radius: 5px;
+}
+.title {
+  font-family: sans-serif;
+}
+.disable-select {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.center {
+  text-align: center;
+}
