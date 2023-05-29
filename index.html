@@ -1,106 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <style>
-      .game {
-        width: 216px;
-        margin-top: 4px;
-        margin-left: 4px;
-      }
-      .button {
-        width: 64px;
-        height: 64px;
-        margin-bottom: 4px;
-        font-family: sans-serif;
-        text-align: center;
-        background-color:lightblue;
-        border-radius: 10px;
-      }
-    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Noughts And Crosses</title>
+    <link href="Icon.png" rel="icon">
+    <link href="style.css" rel="stylesheet">
   </head>
-  <body>
-    <center>
-      <h1 style="font-family: sans-serif;">Noughts And Crosses</h1>
-      <div id="player">
-        <h2 style="font-family: sans-serif;">Player: X</h2>
+  <body class="disable-select">
+    <div class="center">
+      <div id="title" class="title">
+        <h1>Noughts And<br>Crosses</h1>
+        <h2 id="player">Player: X</h2>
       </div>
-        <button class="game button" onclick="button('1')" id="button_1">[ ]</button>
-        <button class="game button" onclick="button('2')" id="button_2">[ ]</button>
-        <button class="game button" onclick="button('3')" id="button_3">[ ]</button><br>
-        <button class="game button" onclick="button('4')" id="button_4">[ ]</button>
-        <button class="game button" onclick="button('5')" id="button_5">[ ]</button>
-        <button class="game button" onclick="button('6')" id="button_6">[ ]</button><br>
-        <button class="game button" onclick="button('7')" id="button_7">[ ]</button>
-        <button class="game button" onclick="button('8')" id="button_8">[ ]</button>
-        <button class="game button" onclick="button('9')" id="button_9">[ ]</button><br>
-    </center>
+      <button type="button" onclick="button_press('1')" id="button_1">[ ]</button>
+      <button type="button" onclick="button_press('2')" id="button_2">[ ]</button>
+      <button type="button" onclick="button_press('3')" id="button_3">[ ]</button><br>
+      <button type="button" onclick="button_press('4')" id="button_4">[ ]</button>
+      <button type="button" onclick="button_press('5')" id="button_5">[ ]</button>
+      <button type="button" onclick="button_press('6')" id="button_6">[ ]</button><br>
+      <button type="button" onclick="button_press('7')" id="button_7">[ ]</button>
+      <button type="button" onclick="button_press('8')" id="button_8">[ ]</button>
+      <button type="button" onclick="button_press('9')" id="button_9">[ ]</button><br>
+    </div>
   </body>
-  <script>
-    var Player = 'X'
-    var won1 = false
-    function button(id1) {
-      if (won1 == false) {
-        button1 = "button_"+id1
-        if (document.getElementById(button1).innerHTML == '[ ]') {
-          document.getElementById(button1).innerHTML = '['+Player+']'
-          if (Player == 'X') {
-            Player = 'O'
-          }
-          else {
-            Player = 'X'
-          }
-          document.getElementById('player').innerHTML = '<h2 style="font-family: sans-serif;">Player: '+Player+'</h2>'
-          checkthree('button_1', 'button_2', 'button_3')
-          checkthree('button_4', 'button_5', 'button_6')
-          checkthree('button_7', 'button_8', 'button_9')
-          checkthree('button_1', 'button_4', 'button_7')
-          checkthree('button_2', 'button_5', 'button_8')
-          checkthree('button_3', 'button_6', 'button_9')
-          checkthree('button_1', 'button_5', 'button_9')
-          checkthree('button_3', 'button_5', 'button_7')
-          if (won1 == false) {
-            checkdraw()
-          }
-        }
-      }
-    }
-    function checkthree(t1, t2, t3) {
-      if (document.getElementById(t1).innerHTML == document.getElementById(t2).innerHTML && document.getElementById(t2).innerHTML == document.getElementById(t3).innerHTML) {
-        if (document.getElementById(t1).innerHTML == '[ ]') {
-        }
-        else {
-          if (document.getElementById(t1).innerHTML == '[X]') {
-            document.getElementById('player').innerHTML = '<h2 style="font-family: sans-serif;">Player X Won!</h2><button style="background-color:lightblue; border-radius: 10px;" onclick="location.reload()">Play Again</button>'
-            won1 = true
-          }
-          else {
-            document.getElementById('player').innerHTML = '<h2 style="font-family: sans-serif;">Player O Won!</h2><button style="background-color:lightblue; border-radius: 10px;" onclick="location.reload()">Play Again</button>'
-            won1 = true
-          }
-        }
-      }
-    }
-    function checkdraw() {
-      if (document.getElementById('button_1').innerHTML == '[X]' || document.getElementById('button_1').innerHTML == '[O]') {
-      if (document.getElementById('button_2').innerHTML == '[X]' || document.getElementById('button_2').innerHTML == '[O]') {
-      if (document.getElementById('button_3').innerHTML == '[X]' || document.getElementById('button_3').innerHTML == '[O]') {
-      if (document.getElementById('button_4').innerHTML == '[X]' || document.getElementById('button_4').innerHTML == '[O]') {
-      if (document.getElementById('button_5').innerHTML == '[X]' || document.getElementById('button_5').innerHTML == '[O]') {
-      if (document.getElementById('button_6').innerHTML == '[X]' || document.getElementById('button_6').innerHTML == '[O]') {
-      if (document.getElementById('button_7').innerHTML == '[X]' || document.getElementById('button_7').innerHTML == '[O]') {
-      if (document.getElementById('button_8').innerHTML == '[X]' || document.getElementById('button_8').innerHTML == '[O]') {
-      if (document.getElementById('button_9').innerHTML == '[X]' || document.getElementById('button_9').innerHTML == '[O]') {
-        document.getElementById('player').innerHTML = '<h2 style="font-family: sans-serif;">Its A Draw!</h2><button style="background-color:lightblue; border-radius: 10px;" onclick="location.reload()">Play Again</button>'
-        won1 = true
-      }
-      }
-      }
-      }
-      }
-      }
-      }
-      }
-      }
-    }
-  </script>
+  <script src="script.js"></script>
 </html>
